@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    domains: ['cdn.omise.co', 'api.omise.co'], // ✅ เพิ่มทั้งสอง
+  },
 };
 
 export default nextConfig;

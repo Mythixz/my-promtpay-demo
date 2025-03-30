@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import Image from 'next/image'
 
 export default function HomePage() {
   const [qrCode, setQrCode] = useState('')
@@ -44,12 +43,11 @@ export default function HomePage() {
         <div className="text-center">
           <p className="mb-4 font-medium">สแกน QR เพื่อชำระเงิน</p>
           <div className="relative w-64 h-64 mx-auto mb-4">
-            <Image
-              src={qrCode}
-              alt="PromptPay QR"
-              fill
-              className="object-contain rounded-md"
-            />
+          <img
+  src={qrCode}
+  alt="PromptPay QR"
+  className="w-64 h-auto mx-auto rounded-md"
+/>
           </div>
 
           <button
