@@ -28,8 +28,8 @@ export default function HomePage() {
   }
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen p-6">
-      <h1 className="text-3xl font-bold mb-6">PromptPay Payment Demo</h1>
+    <main className="flex flex-col items-center justify-center min-h-screen p-6 overflow-y-auto">
+      <h1 className="text-3xl font-bold mb-6 text-center">PromptPay Payment Demo</h1>
 
       {!qrCode ? (
         <button
@@ -42,20 +42,21 @@ export default function HomePage() {
       ) : (
         <div className="text-center">
           <p className="mb-4 font-medium">สแกน QR เพื่อชำระเงิน</p>
-          <div className="relative w-64 h-64 mx-auto mb-4">
-          <img
-  src={qrCode}
-  alt="PromptPay QR"
-  className="w-64 h-auto mx-auto rounded-md"
-/>
-          </div>
 
           <button
             onClick={handleSuccess}
-            className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
+            className="mb-4 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
           >
             ✅ ชำระเงินเสร็จแล้ว
           </button>
+
+          <div className="relative w-64 h-64 mx-auto">
+            <img
+              src={qrCode}
+              alt="PromptPay QR"
+              className="w-64 h-auto mx-auto rounded-md"
+            />
+          </div>
         </div>
       )}
     </main>
